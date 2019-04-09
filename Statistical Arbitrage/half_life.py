@@ -27,6 +27,6 @@ model_s = sm.OLS(spread_df['y'], spread_df['x'])
 model_s = model_s.fit() 
 theta=  model_s.params[0]
 
-# Type your code below
+# Calculate the half life
 hl = math.log(2)/theta
 print(hl,'days')
