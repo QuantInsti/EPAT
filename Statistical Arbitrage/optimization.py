@@ -49,13 +49,11 @@ for i in range(len(lookback)):
 print(matrix)
 import seaborn
 seaborn.heatmap(matrix, cmap='RdYlGn',
-                xticklabels=lookback, yticklabels=std_dev)      
+                xticklabels=std_dev, yticklabels=lookback)      
 plt.show()
-print('X-Axis --> Lookback')  
-print('Y-Axis --> Standard Deviation')  
 
 opt = np.where(matrix == np.max(matrix))
-opt_lookback =  lookback[opt[1][0]]
-opt_std_dev = std_dev[opt[0][0]]
+opt_lookback =  lookback[opt[0][0]]
+opt_std_dev = std_dev[opt[1][0]]
 print('Lookback Optimal', opt_lookback)  
 print('Standard Deviation Optimal', opt_std_dev)  
